@@ -1,0 +1,4 @@
+MÚSICA DE FONDO
+
+El archivo musica-fondo.mp3 es la canción integrada en la invitación.
+Para cambiarla, reemplázalo por otro archivo MP3 conservando exactamente ese nombre.

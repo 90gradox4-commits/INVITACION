@@ -1,0 +1,420 @@
+*{box-sizing:border-box}
+:root{--blue:#dceef8;--blue2:#bddbea;--deep:#28557a;--ink:#31536b;--gold:#b19362;--cream:#fbfbf7}
+html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:Montserrat,sans-serif;background:#e8f3f8;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-3;background:linear-gradient(145deg,#f7fbfc,#dceef7 48%,#eef7fa);}.wash{position:fixed;z-index:-2;border-radius:50%;filter:blur(35px);opacity:.42;pointer-events:none}.wash1{width:480px;height:360px;left:-170px;top:10%;background:#a8ccdc}.wash2{width:520px;height:420px;right:-180px;top:45%;background:#c1dce8}.wash3{width:430px;height:340px;left:20%;bottom:-100px;background:#b7d6e3}
+h1,h2{font-family:"Cormorant Garamond",serif;font-weight:600}h2{font-size:clamp(2.5rem,5vw,4.7rem);line-height:.9;margin:12px 0 25px}.eyebrow{font-size:.64rem;letter-spacing:.28em;font-weight:600;color:#92784e}
+.nav{position:absolute;z-index:20;top:0;left:0;width:100%;display:flex;justify-content:center;align-items:center;gap:25px;padding:13px;background:rgba(248,252,253,.52);backdrop-filter:blur(5px)}.nav a{color:#31536b;text-decoration:none;font-size:.52rem;letter-spacing:.08em}.nav .rsvp{font-size:1.1rem;margin-left:10px}
+.hero{height:100svh;min-height:700px;position:relative;overflow:hidden;display:grid;place-items:center}.hero-bg{position:absolute;inset:0;background:transparent;z-index:0;pointer-events:none}.hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;opacity:1}.hero-overlay{position:absolute;inset:0;z-index:2;background:transparent;pointer-events:none}
+.hero-content{z-index:4;text-align:center;margin-left:-34%;color:#28557a}.crown{font-size:31px;color:#a78a5b}.small-title{font:2.4rem "Cormorant Garamond";letter-spacing:.08em}.hero h1{font-size:clamp(5rem,11vw,9.5rem);line-height:.7;margin:0;color:#28557a}.name{font:clamp(3rem,6vw,5.5rem) Parisienne,cursive;color:#315c79}.ornament{color:#a88b5d;letter-spacing:3px}.music-hero{border:0;background:rgba(210,231,243,.85);color:#28557a;padding:14px 25px;border-radius:32px;display:flex;align-items:center;gap:12px;margin:22px auto 0;cursor:pointer;box-shadow:0 10px 30px rgba(39,79,101,.12)}.music-hero span{font-size:.65rem;letter-spacing:.03em}
+@keyframes slowBg{from{transform:scale(1.01) translateX(-.4%)}to{transform:scale(1.10) translateX(.5%)}}
+.hero-floral{position:absolute;z-index:3;width:260px;height:500px;opacity:.35;filter:blur(.1px)}.hero-floral.left{left:-80px;bottom:-70px;background:radial-gradient(ellipse,#9bc2d5 0 9%,transparent 10%),radial-gradient(ellipse,#b8d6e3 0 8%,transparent 9%);background-size:75px 85px,95px 105px}.hero-floral.right{right:-100px;top:40px;background:radial-gradient(ellipse,#a8cddd 0 9%,transparent 10%);background-size:85px 95px}
+.music-bar{position:sticky;top:12px;z-index:30;width:min(500px,calc(100% - 25px));margin:-38px auto 15px;background:rgba(255,255,255,.94);border:1px solid #c8dfe9;border-radius:40px;padding:10px 15px;display:flex;align-items:center;gap:12px;box-shadow:0 15px 35px rgba(43,78,96,.15)}.music-bar button{width:42px;height:42px;border-radius:50%;border:0;background:#557e9b;color:#fff;cursor:pointer}.music-bar span{flex:1;font:1rem "Cormorant Garamond"}.sound{display:flex;gap:3px;align-items:center}.sound i{width:3px;height:9px;background:#8bb7ca;border-radius:4px}.playing .sound i{animation:bars .65s alternate infinite}.playing .sound i:nth-child(2){animation-delay:.1s}.playing .sound i:nth-child(3){animation-delay:.2s}.playing .sound i:nth-child(4){animation-delay:.3s}@keyframes bars{to{height:23px}}
+.story{max-width:1200px;margin:45px auto 0;min-height:450px;display:grid;grid-template-columns:42% 58%;align-items:center;padding:45px 7%;background:rgba(248,252,253,.62);position:relative}.story-art{padding:18px}.story-art img{width:100%;height:380px;object-fit:cover;border-radius:140px 140px 12px 12px;border:5px solid #fff;box-shadow:0 20px 45px rgba(51,88,108,.13)}.story-copy{padding:20px 7%;text-align:center}.story-copy p{line-height:1.75;font-size:.8rem;max-width:600px;margin:auto}.thank{color:#537086}.signature{font:2.3rem Parisienne;color:var(--gold);margin-top:12px}
+.gallery{max-width:1200px;margin:auto;padding:90px 7%;text-align:center}.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}.gallery-grid button{border:7px solid white;padding:0;background:white;cursor:pointer;box-shadow:0 15px 35px rgba(49,83,103,.13);overflow:hidden}.gallery-grid img{display:block;width:100%;aspect-ratio:1.25/1;object-fit:cover;transition:.6s}.gallery-grid button:hover img{transform:scale(1.06)}.gallery-note{font-size:.63rem;letter-spacing:.08em;color:#6e8998}
+.event{padding:85px 20px;background:url("assets/images/background-acuarela-2.jpg") center/cover;position:relative;overflow:hidden}.event:before{content:"";position:absolute;inset:0;background:rgba(223,239,247,.46)}.event-inner{position:relative;max-width:1080px;margin:auto;text-align:center}.event-grid{display:grid;grid-template-columns:1fr 1fr 1.2fr auto;align-items:center;gap:15px;margin-top:38px}.event-item{min-height:105px;border-right:1px solid rgba(65,96,112,.25);display:flex;flex-direction:column;justify-content:center;align-items:center}.icon{font-size:30px;color:#4e7790}.event-item small{font-size:.55rem;letter-spacing:.16em}.event-item b{font:1.15rem "Cormorant Garamond";margin-top:5px}.event-item em{font-style:normal;font-size:.6rem}.map-btn{background:#4e7897;color:white;text-decoration:none;border-radius:25px;padding:14px 20px;font-size:.63rem;letter-spacing:.1em}
+.count{text-align:center;padding:85px 20px}.counter{display:flex;justify-content:center;gap:14px;margin:35px auto 18px}.counter div{width:105px;height:105px;border:1px solid #a8a49a;border-radius:50%;display:grid;place-content:center;background:rgba(255,255,255,.35)}.counter b{font:2.3rem "Cormorant Garamond";color:#2d5878}.counter span{font-size:.48rem;letter-spacing:.12em}.count>p{font-size:.55rem;letter-spacing:.18em}
+.dress{padding:75px 6%;background:rgba(217,236,245,.6)}.dress-card{max-width:1050px;margin:auto;display:grid;grid-template-columns:1fr 1fr;align-items:center;background:rgba(255,255,255,.52);border:1px solid rgba(255,255,255,.9);border-radius:15px;padding:35px;gap:40px;text-align:center}.dress-icons{font-size:35px;color:#557c96}.reserved{padding:28px;border:1px solid #c5d7e0;background:rgba(248,252,253,.65)}.reserved span{font-size:.6rem;letter-spacing:.15em}.reserved strong{display:block;font:1.3rem "Cormorant Garamond";margin:8px}.swatches{display:flex;justify-content:center;gap:8px}.swatches i{width:24px;height:24px;border-radius:50%;background:#a98bc2}.swatches i:nth-child(2){background:#d5b6c9}.swatches i:nth-child(3){background:#d8c3ad}.swatches i:nth-child(4){background:#e6d8c2}
+.timeline-section{padding:85px 5%;max-width:1200px;margin:auto;text-align:center}.timeline{display:grid;grid-template-columns:repeat(5,1fr);position:relative;margin-top:55px}.timeline:before{content:"";position:absolute;top:31px;left:5%;right:5%;height:1px;background:#a8bfd0}.timeline div{position:relative;display:grid;gap:7px;justify-items:center}.timeline div:after{content:"";position:absolute;top:25px;width:12px;height:12px;border-radius:50%;background:#5c8299;border:4px solid #e9f4f8}.timeline time{font-size:.55rem;color:#7d6847}.timeline span{font-size:22px;color:#47738e;height:50px}.timeline b{font:1rem "Cormorant Garamond";padding:0 6px;margin-top:10px}
+.bottom-grid{display:grid;grid-template-columns:1fr 1fr;max-width:1200px;margin:auto;background:rgba(255,255,255,.48);border:1px solid rgba(178,150,103,.25)}.confirm,.gift{text-align:center;padding:65px 9%}.confirm{border-right:1px solid rgba(178,150,103,.35)}.confirm p,.gift p{font-size:.72rem;line-height:1.8}.whatsapp{display:inline-block;background:#20a45a;color:#fff;padding:14px 22px;border-radius:30px;text-decoration:none;font-size:.65rem;letter-spacing:.05em}.confirm small{display:block;margin-top:10px;font-size:.55rem}.gift-icon{font-size:42px;color:#8c7450}.gift p b{font:1.5rem Parisienne;color:#b08d57}
+.final{height:80svh;min-height:620px;position:relative;overflow:hidden;display:grid;place-items:center}.final img{position:absolute;width:100%;height:100%;object-fit:cover;animation:slowBg 20s alternate infinite}.final-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(35,64,79,.68),transparent 65%)}.final-text{position:relative;align-self:end;text-align:center;color:white;padding:70px 20px}.final-text span{font:4.5rem Parisienne;color:#f0dcb1}.final-text small{letter-spacing:.3em}.final-text p{font-size:.7rem}
+footer{text-align:center;background:#31576c;color:white;padding:40px;font:1.5rem "Cormorant Garamond"}
+.lightbox{position:fixed;z-index:100;inset:0;background:rgba(18,37,47,.94);display:none;place-items:center}.lightbox.open{display:grid}.lightbox img{max-width:88vw;max-height:86vh}.lightbox button{position:absolute;border:0;color:white;background:rgba(255,255,255,.12);cursor:pointer}.lightbox #close{top:18px;right:20px;font-size:30px;width:45px;height:45px;border-radius:50%}.lightbox #prev,.lightbox #next{top:50%;font-size:55px;width:55px;height:75px}.lightbox #prev{left:10px}.lightbox #next{right:10px}.lightbox #counterLabel{position:absolute;bottom:18px;color:white;font-size:.65rem;letter-spacing:.2em}
+.reveal{opacity:0;transform:translateY(55px) scale(.985);filter:blur(3px);transition:opacity .9s ease,transform 1s cubic-bezier(.2,.75,.2,1),filter .8s ease}.reveal.visible{opacity:1;transform:none;filter:blur(0)}
+@media(max-width:850px){.nav{gap:10px}.nav a{font-size:.42rem}.hero-content{margin-left:0}.hero-overlay{background:transparent}.story{grid-template-columns:1fr}.story-art{max-width:500px;margin:auto}.event-grid{grid-template-columns:repeat(2,1fr)}.event-item:nth-child(2){border:0}.map-btn{grid-column:1/-1;justify-self:center}.timeline{grid-template-columns:repeat(5,1fr);row-gap:35px}.timeline:before{display:none}.bottom-grid{grid-template-columns:1fr}.confirm{border-right:0;border-bottom:1px solid rgba(178,150,103,.35)}}
+@media(max-width:560px){.nav{display:none}.hero{min-height:650px}.hero h1{font-size:5.2rem}.music-bar{margin:-30px auto 0}.gallery-grid{grid-template-columns:1fr}.event-grid{grid-template-columns:1fr}.event-item{border-right:0;border-bottom:1px solid rgba(65,96,112,.2);padding:14px}.dress-card{grid-template-columns:1fr}.timeline{grid-template-columns:repeat(2,1fr)}.counter{gap:5px}.counter div{width:76px;height:76px}.counter b{font-size:1.8rem}.counter span{font-size:.4rem}.final-text span{font-size:4rem}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+
+/* V5 · FOTO PRINCIPAL AL FRENTE */
+.hero-photo{opacity:1!important;filter:none!important}
+.hero-overlay{background:transparent!important;opacity:1!important}
+.hero-content{filter:none;text-shadow:0 3px 14px rgba(255,255,255,.28),0 4px 18px rgba(20,55,75,.22)}
+.hero-content .crown,.hero-content .small-title,.hero-content h1,.hero-content .name{
+  text-shadow:0 2px 10px rgba(255,255,255,.65),0 3px 14px rgba(20,55,75,.18);
+}
+.hero-bg{z-index:0;opacity:.01;pointer-events:none}
+
+/* V6 · BANNER PRINCIPAL FOTOGRÁFICO */
+.hero{
+  background:#dceef7;
+}
+.hero-photo{
+  opacity:1!important;
+  filter:none!important;
+  object-fit:cover;
+  object-position:center;
+}
+.hero-overlay{
+  background:transparent!important;
+  opacity:1!important;
+}
+.hero-bg{display:none!important}
+
+/* V7 · AJUSTES SOLICITADOS */
+.hero-content .small-title,
+.hero-content h1,
+.hero-content .name{
+  color:#fff!important;
+  text-shadow:0 3px 14px rgba(31,58,75,.45),0 1px 8px rgba(255,255,255,.18);
+}
+
+/* Nueva sección de padres */
+.parents{
+  max-width:1200px;
+  margin:auto;
+  padding:85px 7%;
+  text-align:center;
+  position:relative;
+}
+.parents-card{
+  max-width:900px;
+  margin:auto;
+  padding:65px 9%;
+  background:rgba(248,252,253,.72);
+  border:1px solid rgba(177,147,98,.30);
+  box-shadow:0 20px 55px rgba(48,82,101,.09);
+  position:relative;
+}
+.parents-card:before,
+.parents-card:after{
+  content:"❦";
+  position:absolute;
+  color:#8eb7ca;
+  opacity:.42;
+  font-size:70px;
+}
+.parents-card:before{left:24px;top:18px;transform:rotate(-25deg)}
+.parents-card:after{right:24px;bottom:18px;transform:rotate(155deg)}
+.parents-card>p{
+  max-width:680px;
+  margin:10px auto;
+  font-size:.78rem;
+  line-height:1.9;
+}
+.parents-ornament{
+  color:#ad8e5a;
+  font-size:25px;
+  margin:-8px 0 12px;
+}
+.parent-names{
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  max-width:650px;
+  margin:30px auto 20px;
+  gap:25px;
+}
+.parent-names>div:not(.heart){
+  padding:18px 10px;
+  border-top:1px solid rgba(177,147,98,.35);
+  border-bottom:1px solid rgba(177,147,98,.35);
+}
+.parent-names span{
+  display:block;
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  font-size:.56rem;
+  color:#718b9a;
+  margin-bottom:7px;
+}
+.parent-names strong{
+  font:1.55rem "Cormorant Garamond",serif;
+  font-weight:600;
+  color:#315b77;
+}
+.parent-names .heart{
+  color:#b19362;
+  font-size:27px;
+}
+.parents-closing{
+  font-family:"Cormorant Garamond",serif;
+  color:#6d8390;
+}
+
+/* Se eliminan visualmente los puntos de colores del código de vestimenta. */
+.swatches{display:none!important}
+@media(max-width:650px){
+  .parents{padding:65px 5%}
+  .parents-card{padding:55px 7%}
+  .parent-names{grid-template-columns:1fr;gap:8px}
+  .parent-names .heart{order:2}
+  .parent-names>div:last-child{order:3}
+}
+
+/* ===== V8 · PARTÍCULAS DORADAS EN TODA LA LANDING ===== */
+#goldParticles{
+  position:fixed;
+  inset:0;
+  z-index:15;
+  pointer-events:none;
+  overflow:hidden;
+}
+.gold-particle{
+  position:absolute;
+  bottom:-30px;
+  width:var(--size);
+  height:var(--size);
+  border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#fff8dc 0 12%,#e8c77b 32%,#b68a42 68%,transparent 72%);
+  box-shadow:0 0 5px rgba(225,190,104,.65),0 0 12px rgba(225,190,104,.24);
+  opacity:0;
+  animation:goldFloat var(--duration) linear infinite;
+  animation-delay:var(--delay);
+}
+.gold-particle.star{
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+  width:calc(var(--size) * 2.2);
+  height:calc(var(--size) * 2.2);
+  transform:rotate(45deg);
+}
+.gold-particle.star:before,.gold-particle.star:after{
+  content:"";
+  position:absolute;
+  left:50%;top:50%;
+  transform:translate(-50%,-50%);
+  background:linear-gradient(90deg,transparent,#f2d58f,transparent);
+  border-radius:50%;
+}
+.gold-particle.star:before{width:100%;height:22%}
+.gold-particle.star:after{width:22%;height:100%}
+@keyframes goldFloat{
+  0%{transform:translate3d(0,0,0) scale(.55) rotate(0deg);opacity:0}
+  8%{opacity:.8}
+  25%{transform:translate3d(var(--drift1),-25vh,0) scale(1) rotate(35deg)}
+  52%{transform:translate3d(var(--drift2),-52vh,0) scale(.72) rotate(90deg)}
+  78%{transform:translate3d(var(--drift3),-78vh,0) scale(1.05) rotate(145deg);opacity:.65}
+  100%{transform:translate3d(var(--drift4),-112vh,0) scale(.35) rotate(210deg);opacity:0}
+}
+@media(prefers-reduced-motion:reduce){
+  #goldParticles{display:none}
+}
+
+/* V9: gallery expanded to six photos */
+.gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.gallery-item{overflow:hidden;display:block}
+.gallery-item img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .6s ease}
+.gallery-item:hover img{transform:scale(1.035)}
+@media(max-width:760px){.gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.gallery-item img{aspect-ratio:3/4}}
+
+/* V9: final Instagram invitation */
+.instagram-cta{position:relative;overflow:hidden;text-align:center;padding:86px 24px 92px;background:radial-gradient(circle at 50% 0%,rgba(255,248,220,.72),transparent 42%),linear-gradient(180deg,rgba(236,226,207,.62),rgba(221,213,198,.48));border-top:1px solid rgba(181,143,73,.28)}
+.instagram-cta__inner{max-width:760px;margin:auto;position:relative;z-index:2}
+.instagram-icon{width:72px;height:72px;margin:0 auto 20px;display:grid;place-items:center;border:1px solid rgba(181,143,73,.7);border-radius:22px;color:#9c783d;background:rgba(255,255,255,.34);box-shadow:0 10px 35px rgba(95,73,40,.12)}
+.instagram-icon svg{width:39px;height:39px}
+.instagram-cta__eyebrow{margin:0 0 10px;font:500 12px/1.2 Montserrat,sans-serif;letter-spacing:.28em;color:#9c783d}
+.instagram-cta h2{margin:0;font-family:"Cormorant Garamond",serif;font-size:clamp(36px,5vw,58px);font-weight:500;line-height:1.02;color:#3c3a37}
+.instagram-cta__text{max-width:580px;margin:18px auto 26px;font:400 14px/1.8 Montserrat,sans-serif;color:#69645e}
+.instagram-cta__button{display:inline-flex;align-items:center;gap:14px;padding:14px 23px;border:1px solid rgba(156,120,61,.7);border-radius:999px;text-decoration:none;color:#6f562d;background:rgba(255,255,255,.45);font:500 12px/1 Montserrat,sans-serif;letter-spacing:.09em;transition:.25s}
+.instagram-cta__button:hover{transform:translateY(-2px);background:rgba(255,255,255,.7);box-shadow:0 10px 26px rgba(95,73,40,.12)}
+.instagram-cta__handle{margin:15px 0 0;font:400 11px/1.2 Montserrat,sans-serif;letter-spacing:.18em;color:#8c8881}
+
+/* V10 — Instagram compacto al final */
+.instagram-cta{display:none!important}
+.instagram-mini{
+  position:relative;
+  z-index:20;
+  text-align:center;
+  padding:22px 16px 26px;
+  background:rgba(244,239,230,.42);
+  border-top:1px solid rgba(181,143,73,.20);
+}
+.instagram-mini a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  text-decoration:none;
+  color:#7c6337;
+  font-family:Montserrat,sans-serif;
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:.06em;
+  transition:opacity .25s ease, transform .25s ease;
+}
+.instagram-mini a:hover{opacity:.78;transform:translateY(-1px)}
+.instagram-mini__icon{
+  width:25px;
+  height:25px;
+  display:grid;
+  place-items:center;
+  color:#9c783d;
+}
+.instagram-mini__icon svg{width:23px;height:23px}
+.instagram-mini__handle{
+  color:#a39d94;
+  font-size:10px;
+  letter-spacing:.08em;
+}
+
+/* V11 — exactly six photos in "Recuerdos para siempre" */
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+}
+.gallery-item{
+  display:block;
+  overflow:hidden;
+}
+.gallery-item img{
+  display:block;
+  width:100%;
+  aspect-ratio:4/5;
+  object-fit:cover;
+  transition:transform .55s ease;
+}
+.gallery-item:hover img{transform:scale(1.035)}
+@media(max-width:760px){
+  .gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .gallery-item img{aspect-ratio:3/4}
+}
+
+/* V11 — small Instagram + WhatsApp CTA */
+.social-mini{
+  position:relative;
+  z-index:20;
+  padding:20px 16px 24px;
+  text-align:center;
+  background:rgba(244,239,230,.42);
+  border-top:1px solid rgba(181,143,73,.20);
+}
+.social-mini__title{
+  margin-bottom:10px;
+  color:#80683f;
+  font-family:Montserrat,sans-serif;
+  font-size:10px;
+  font-weight:500;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.social-mini__links{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.social-mini__link{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  padding:6px 11px;
+  border:1px solid rgba(156,120,61,.28);
+  border-radius:999px;
+  color:#7b6a50;
+  background:rgba(255,255,255,.32);
+  text-decoration:none;
+  font-family:Montserrat,sans-serif;
+  font-size:9px;
+  font-weight:500;
+  letter-spacing:.04em;
+  transition:transform .2s ease,opacity .2s ease,background .2s ease;
+}
+.social-mini__link:hover{
+  transform:translateY(-1px);
+  opacity:.82;
+  background:rgba(255,255,255,.58);
+}
+.social-mini__icon{
+  width:19px;
+  height:19px;
+  display:grid;
+  place-items:center;
+}
+.social-mini__icon svg{width:18px;height:18px}
+.social-mini__icon--instagram{color:#9c783d}
+.social-mini__icon--whatsapp{color:#6f8b70}
+
+.instagram-cta{display:none!important}.instagram-mini{display:none!important}
+
+/* Victoria — layout refinements for supplied details */
+.dress-guidance{margin:12px 0 0;color:#5e6670;font-size:13px;line-height:1.7}
+.dress-guidance b{display:inline-block;margin-bottom:3px;letter-spacing:.12em;font-size:10px;color:#927541}
+.reserved strong{display:block;margin-top:8px;font-family:"Cormorant Garamond",serif;font-size:clamp(30px,5vw,48px);letter-spacing:.12em}
+.rsvp-phones{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:20px 0}
+.rsvp-phones .whatsapp{display:inline-flex;align-items:center;justify-content:center;min-width:170px}
+.gift-list-btn{display:inline-block;margin:12px auto 4px;padding:11px 17px;border:1px solid rgba(156,120,61,.6);border-radius:999px;color:#80683f;text-decoration:none;font-family:Montserrat,sans-serif;font-size:10px;letter-spacing:.1em}
+.gift-thanks{margin-top:15px!important;font-style:italic}
+.event-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:700px){.event-grid{grid-template-columns:1fr}.rsvp-phones{flex-direction:column;align-items:center}}
+
+
+/* Pantalla de bienvenida: el primer toque permite iniciar la música */
+.welcome-screen{
+ position:fixed;inset:0;z-index:10000;display:grid;place-items:center;
+ padding:24px;background:linear-gradient(135deg,rgba(232,239,245,.96),rgba(248,244,235,.97)),
+ url("assets/images/background-acuarela-2.jpg") center/cover;
+ opacity:1;visibility:visible;transition:opacity .75s ease,visibility .75s ease;
+}
+.welcome-screen.is-closing{opacity:0;visibility:hidden;pointer-events:none}
+.welcome-card{
+ width:min(92vw,470px);padding:48px 28px 42px;text-align:center;
+ border:1px solid rgba(164,128,68,.52);outline:1px solid rgba(164,128,68,.24);
+ outline-offset:8px;background:rgba(255,255,255,.78);
+ box-shadow:0 18px 70px rgba(66,75,86,.13);backdrop-filter:blur(8px);
+}
+.welcome-crown{font-size:42px;color:#a8874d;line-height:1;margin-bottom:16px}
+.welcome-eyebrow{font-family:Montserrat,sans-serif;font-size:10px;letter-spacing:.22em;color:#8d754e}
+.welcome-card h2{margin:13px 0 8px;font-family:"Parisienne",cursive;font-size:clamp(48px,10vw,68px);font-weight:400;color:#52677b}
+.welcome-ornament{color:#a8874d;letter-spacing:.08em;margin:13px 0}
+.welcome-card p{font-family:Montserrat,sans-serif;font-size:11px;letter-spacing:.18em;color:#66717d;margin:16px 0 26px}
+.welcome-open{
+ display:inline-flex;align-items:center;gap:12px;padding:15px 25px;border:1px solid #a8874d;
+ border-radius:999px;background:#fff;color:#80683f;font-family:Montserrat,sans-serif;
+ font-size:11px;letter-spacing:.13em;cursor:pointer;transition:transform .2s ease,background .2s ease;
+}
+.welcome-open:hover{transform:translateY(-2px);background:#faf7f0}
+.welcome-open span{font-size:17px}
+.welcome-card small{display:block;margin-top:19px;color:#858585;font-family:Montserrat,sans-serif;font-size:9px;letter-spacing:.04em}
+body.welcome-locked{overflow:hidden}
+
+
+/* Ajuste visual solicitado: bienvenida azul claro y botones con destello suave */
+.welcome-screen{
+ background:
+   radial-gradient(ellipse at 18% 12%,rgba(255,255,255,.96),transparent 48%),
+   radial-gradient(ellipse at 82% 88%,rgba(192,215,235,.48),transparent 52%),
+   linear-gradient(135deg,#eaf3fb 0%,#dceaf6 48%,#f5f8fb 100%);
+}
+.welcome-card{
+ border-color:rgba(116,151,184,.58);
+ outline-color:rgba(116,151,184,.30);
+ background:rgba(255,255,255,.82);
+}
+.welcome-crown,.welcome-ornament{color:#7898b6}
+.welcome-eyebrow{color:#718da8}
+.welcome-card h2{color:#526f8b}
+.welcome-card p{color:#607b95}
+.welcome-open{
+ border-color:#91aec9;
+ color:#587997;
+ background:linear-gradient(180deg,#fff 0%,#edf5fb 100%);
+ box-shadow:0 5px 18px rgba(102,139,174,.12);
+}
+
+/* Brillo intermitente discreto para los botones y llamadas a la acción */
+@keyframes buttonGlimmer{
+ 0%,100%{box-shadow:0 0 0 rgba(137,171,202,0),0 0 0 0 rgba(137,171,202,0);filter:brightness(1)}
+ 50%{box-shadow:0 0 13px 2px rgba(137,171,202,.30),0 0 0 4px rgba(137,171,202,.08);filter:brightness(1.045)}
+}
+button,
+a.gift-list-btn,
+a.whatsapp,
+a.rsvp,
+a.social-mini__link,
+a[href*="wa.me"]{
+ animation:buttonGlimmer 2.4s ease-in-out infinite;
+}
+button:hover,
+a.gift-list-btn:hover,
+a.whatsapp:hover,
+a.rsvp:hover,
+a.social-mini__link:hover,
+a[href*="wa.me"]:hover{
+ animation-play-state:paused;
+ filter:brightness(1.08);
+}
+@media(prefers-reduced-motion:reduce){
+ button,a.gift-list-btn,a.whatsapp,a.rsvp,a.social-mini__link,a[href*="wa.me"]{animation:none}
+}

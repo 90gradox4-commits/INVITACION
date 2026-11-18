@@ -1,0 +1,45 @@
+TARJETA WEB — VICTORIA GALVÁN ARÁMBULA
+
+DATOS CARGADOS:
+- Celebración: 15 años de Victoria Galván Arámbula.
+- Padres: Numan Galván Cano y Kellys Margarita Arámbula Meneses.
+- Fecha: sábado 2 de enero de 2027.
+- 5:00 p. m.: Eucaristía en la Iglesia Nuestra Señora del Rosario de Chiquinquirá.
+- 6:00 p. m.: Recepción en Casa Campestre Los Polluelos.
+- Vestuario: color azul reservado. Hombres: guayabera blanca de manga larga. Mujeres: vestido tipo cóctel, elegante y delicado, preferiblemente tonos pastel.
+- Confirmaciones: 3142041670 y 3107386004.
+- Regalos: preferencia por regalo; sobre como alternativa. Se agregó el enlace a la lista de opciones.
+
+FOTOGRAFÍAS:
+Reemplaza estos archivos conservando sus nombres:
+assets/images/principal.jpg       (portada)
+assets/images/galeria-1.jpg       (galería 1)
+...
+assets/images/galeria-6.jpg       (galería 6)
+assets/images/final.jpg          (fotografía final)
+Las ocho fotografías finales ya están integradas en sus respectivos espacios.
+
+MÚSICA:
+La canción de fondo ya está integrada en assets/audio/musica-fondo.mp3. Para cambiarla, reemplaza ese archivo por otro MP3 conservando el mismo nombre.
+
+NOTA:
+No se proporcionó un enlace de Google Maps ni itinerario adicional. Por eso solo se muestran los dos momentos y lugares informados por el cliente, sin inventar horarios ni direcciones.
+
+
+ACTUALIZACIÓN — MÚSICA Y LISTA DE REGALOS
+- La tarjeta intenta reproducir la música automáticamente al abrirse.
+- Incluye controles para reproducir y pausar la canción.
+- Algunos navegadores bloquean el sonido automático hasta que la persona toque o haga clic en la página. En ese caso, la música comienza con la primera interacción.
+- El botón VER LISTA DE REGALOS abre: https://share.gemini.google/C9zdxTCtxA55
+
+
+PANTALLA DE BIENVENIDA Y MÚSICA
+- Al abrir la web aparece una pantalla inicial con el botón "ABRIR INVITACIÓN".
+- Al tocarlo, se inicia la música y se muestra la tarjeta de Victoria.
+- El reproductor dentro de la invitación permite pausar y reanudar la canción.
+- El botón "VER LISTA DE REGALOS" abre solamente el enlace externo y no controla la música.
+
+
+ACTUALIZACIÓN VISUAL
+- La pantalla inicial usa ahora tonos azul claro.
+- Los botones y enlaces de acción tienen un brillo intermitente suave; al pasar el cursor se pausa el efecto.
